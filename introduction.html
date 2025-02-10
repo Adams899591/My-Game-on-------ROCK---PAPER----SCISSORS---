@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help on How to Play </title>
+</head>
+<body>
+    <div class="Container">
+        <h1 id="Display-name"></h1>
+         <h1>How to Play</h1>
+             <div class="All-paragraph">
+                    <p>1. You will face of the computer in a classic <b>ROCK-PAPER-SCISSORS</b> battle.</p>
+                    <p>2.  if you prefer something different, you can choose a unic mode like <b>Fire-Water-Plant, Lion-Hunter-Gun</b> and more!</p>
+                    <p>3.  The Computer will randomely pick one, and you must choose your moves wisely.</p>
+                    <p>4.  The game will instantly tell you if you <b>Win, Loose, or Tie </b></p>
+                    <p>5. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
+             </div>
+            <h2> 😁  Game Mode</h2>
+
+             <div class="All-paragraph">
+                <p><input type="radio" name=" GameMode" id="RockPaperScissor">💎  Classic  - <b>Rock, Paper, Scissor</b></p>
+                <p><input type="radio" name=" GameMode" id="FireWaterPlant">🎅  Element  -  <b>Fire, Water, Plant </b></p>
+                <p><input type="radio" name=" GameMode" id="LionHunterGun">🦁  Survival -  <b>Lion, Hunter, Gun</b></p>
+                <p><input type="radio" name=" GameMode" id="SunMoonStar">🙄  Space -     <b>Sun, Moon, Star</b></p>
+
+                <br>
+                <p><b>Choose wisely and let the battle begin!</b>       <button class="button-1" id="Continue">Continue</button></p>
+               
+
+             </div>
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+<style>
+.Container{
+    text-align: center;
+    
+}
+.All-paragraph{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+}
+.button-1{
+    background-color: rgba(0, 0, 255, 0.61);
+    padding: 1vh;
+}
+</style>
+
+
+<script>
+
+
+//  dis play the game to users 
+  let Displayname =  document.getElementById("Display-name");
+//   button to click afrer selestig games 
+  let Continue = document.getElementById("Continue");
+//   list of games avaiable to play
+  let RockPaperScissor = document.getElementById("RockPaperScissor");
+  let FireWaterPlant = document.getElementById("FireWaterPlant")
+  let LionHunterGun = document.getElementById("LionHunterGun")
+  let SunMoonStar = document.getElementById("SunMoonStar")
+
+  const guitar = new Audio("audio/guitar.wav");
+
+
+
+Continue.onclick = function () {
+
+    if (RockPaperScissor.checked) {
+        guitar.play()
+        Displayname.style.color = "green"
+        Displayname.textContent = "You have chosen  Rock, Paper, Scissor."
+        setTimeout(() => {
+            window.location.href = "RockPaperScissor.html"
+        }, 2000);
+        
+    }
+    else if (FireWaterPlant.checked) {
+        guitar.play()
+         Displayname.style.color = "green"
+         Displayname.textContent = "You have chosen Fire, Water, Plant."
+    }
+    else if (LionHunterGun.checked) {
+        guitar.play()
+         Displayname.style.color = "green"
+         Displayname.textContent = "You have chosen Lion, Hunter, Gun."
+    }
+    else if (SunMoonStar.checked) {
+        guitar.play()
+         Displayname.style.color = "green"
+         Displayname.textContent = "You have chosen Sun, Moon,  Star."
+    }else{
+        guitar.play()
+        Displayname.style.color = "red"
+          Displayname.textContent = "Please select a game mode"
+    }
+
+    
+    
+
+    
+}
+
+
+
+
+
+
+</script>

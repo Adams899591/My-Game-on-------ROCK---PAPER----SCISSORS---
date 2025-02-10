@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You have chosen  Rock, Paper, Scissor.</title>
+</head>
+<body>
+    <!-- work on first container -->
+   <div id="first-container">
+      <h1>Rock, Paper, Scissor</h1>
+     <label  for=""><b>Confirm players Name:</b></label>
+      <br>
+      <br>
+     <input  id="Name" type="text" placeholder="Confirm Name">
+      <br>
+      <br>
+     <button id="Continue"><b>Continue</b></button> <br><br>
+
+     <span id="display"></span>
+   </div>
+
+
+
+<!-- work on second container -->
+   <div  id="second-container">
+<!--            
+                <h2 id="Player"></h2>       <span  id="player-count">0</span>  
+                <h2 id="computer">🏃‍♂️Computer Score : </h2>          <span id="computer-count">0</span> -->
+         
+                <h1>Rock, Paper, Scissor</h1>
+                     <div class="choices">
+                        <button   onclick="playgame(`Rock`)">🛑</button>
+                        <button  onclick="playgame(`Paper`)">✍</button>
+                        <button  onclick="playgame(`Scissor`)">🎁</button>
+                     </div>
+                           
+                                <p id="player-display"></p>
+                                <p id="computer-display"></p>
+                                <p id="result-display"> </p>
+                             
+                        
+                      
+        
+   </div> 
+</body>
+</html>
+
+<style>
+    /* work on first container */
+#first-container{
+    text-align: center;
+    /* font-family: 'Times New Roman', Times, serif; */
+}
+#Name{
+    font-weight: bold;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+}
+#Continue{
+    padding: 1vh;
+    color:white;
+    background-color: rgba(0, 0, 255, 0.589);
+    margin-left: 15%;   
+}
+#display{
+    font-size: 30px;
+}
+label{
+    font-size: 20px;
+}
+body{
+    background-image: url(image/R.P.S.jpg);
+}
+
+                               /* my work on second container */
+#second-container{
+ text-align: center;
+}
+#player-count, #computer-count{
+    font-weight: bolder;
+    font-size: 30px;
+}
+.play{
+    font-size: 70px;
+}
+</style>
+
+
+
+
+<script>
+      document.getElementById("first-container");
+      document.getElementById("second-container");
+  let Name =   document.getElementById("Name");
+  let display = document.getElementById("display");
+      document.getElementById("Continue")
+    //  const gamssound = new Audio("audio/game-level.wav");
+
+
+
+
+
+    document.getElementById("Continue").onclick = function () {
+        if (Name.value == "") {
+            display.style.color = "red"
+            display.textContent = "Your name cant be empty"
+
+        }else if (Name.value != "") {
+                // gamssound.play()
+                display.style.color = "white"
+                display.style.fontWeight = "bold"
+                display.textContent = `Welcome 🙋‍♂️ ${Name.value}`
+                
+
+              
+                // setTimeout(() => {
+                //     // Enter = document.getElementById("second-container").innerHTML;
+                //     // document.getElementById("first-container").innerHTML = Enter;
+               
+                // }, 4000);
+            }         
+     
+        document.getElementById("Player").textContent =  ` 👮‍♂️  ${Name.value} Score:  `
+        
+    }
+
+
+
+
+    
+                //  document.getElementById("computer-display");
+                //   document.getElementById("player-display");    
+                //   document.getElementById("result-display");       
+
+
+
+
+
+function playgame(Playerchoices) {
+     choices = ["Rock","Paper","Scissor"]
+             Computerchoices = choices[Math.floor(Math.random() * 3 )]
+// console.log(Computerchoices);
+// document.getElementById("mmm").textContent = Computerchoices 
+    let  result = "";
+
+       if (Playerchoices === Computerchoices) {
+  
+        result = "it is a tie "
+
+    
+                        
+        document.getElementById("computer-display").textContent =  `Computer:  ${Computerchoices}` 
+        document.getElementById("player-display").textContent = `Player:  ${Playerchoices}`
+        document.getElementById("result-display").textContent = result
+       }else{
+        switch (Playerchoices) {
+            case "Rock":
+            result = Computerchoices === "Paper" ? "You Win!" : "You Lose"
+               document.getElementById("computer-display").textContent =  `Computer:  ${Computerchoices}` 
+               document.getElementById("player-display").textContent = `Player:  ${Playerchoices}`
+               document.getElementById("result-display").textContent = result
+             break;
+        switch (Playerchoices) {
+            case "Paper":
+            result = Computerchoices === "Scissor" ? "You Win!" : "You Lose"
+               document.getElementById("computer-display").textContent =  `Computer:  ${Computerchoices}` 
+               document.getElementById("player-display").textContent = `Player:  ${Playerchoices}`
+               document.getElementById("result-display").textContent = result
+         break;
+        }
+        switch (Playerchoices) {
+            case "Scissor":
+            result = Computerchoices === "Rock" ? "You Win!" : "You Lose"
+               document.getElementById("computer-display").textContent =  `Computer:  ${Computerchoices}` 
+               document.getElementById("player-display").textContent = `Player:  ${Playerchoices}`
+               document.getElementById("result-display").textContent = result
+         break;
+       
+
+        }
+       }
+
+    //    document.getElementById("player-count")
+    //            if ( document.getElementById("result-display") === "You Win!") {
+    //             document.getElementById("player-count")++
+    //            } else {
+                
+    //            }
+
+
+    }
+        //   document.getElementById("computer-display").textContent =  `Computer:  ${Computerchoices}` 
+        //        document.getElementById("player-display").textContent = `Player:  ${Playerchoices}`
+            //    document.getElementById("result-display").textContent = result
+}
+
+
+</script>

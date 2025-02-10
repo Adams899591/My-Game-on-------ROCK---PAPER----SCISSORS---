@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcom to my game on ROCK _ PAPER _ SCISSORS</title>
+    <link rel="stylesheet" href="introduction.html">
+</head>
+<body>
+
+   <div class="container">
+
+    <span class="baby">😎</span>
+    <h2>Welcome To The Ultimate ROCK PAPER SCISSORS Game!</h2>
+    <p class="paragraph"><b>Before u begin please enter your name below so that we can personalized your experience.</b></p>
+
+    <br>
+    <br>
+    <label class="paragraph" for=""><b>Enter Your Name:</b></label>
+    <br>
+    <br>
+    <span  class="paragraph" id="display-massages"><b></b></span>
+    <br>
+    <br>
+    <input class="input-1" type="text"  id="PlayersName" placeholder="Your Name">
+    <br>
+    <br>
+    <br>
+    <button class="button-1"  id="Start-Game"><b>Start Game</b></button>
+
+   </div>
+  
+    
+
+
+       <!-- <script src="index.js"></script> -->
+</body>
+</html>
+
+
+
+                                 <!-- my work on css -->
+<style>
+.container{
+text-align: center;
+
+}
+.baby{
+    font-size: 900%;
+}
+.paragraph{
+   font-size: larger;
+}
+.input-1{
+    width: 300px;
+    height: 30px;
+    text-align: center;   
+}
+.button-1{
+    margin-left: 30%;
+    background-color: rgba(0, 0, 255, 0.61);
+    padding: 1vh;
+
+}
+</style>
+
+                                           <!-- my work n javascript -->
+
+<script>
+
+    let PlayersName =  document.getElementById("PlayersName");
+    let StartGame = document.getElementById("Start-Game");
+    let displaymassages = document.getElementById("display-massages")
+   
+    const gamssound = new Audio("audio/game-level.wav");
+
+    
+
+
+ StartGame.onclick = function () {
+  
+         if (PlayersName.value === ``) {
+            gamssound.play()
+                  displaymassages.style.color = "red"
+                  displaymassages.textContent = "players name can not be enpty"                    
+           }
+         else if (PlayersName.value != "") {  
+            gamssound.play()       
+                displaymassages.style.color = "green"
+                
+                      displaymassages.textContent = `Verifying name...`
+               
+                setTimeout(() => {
+                      displaymassages.textContent = `Checking for errors...`
+                }, 3000);
+
+                setTimeout(() => {
+                      displaymassages.textContent = `Name accepted!`
+                }, 6000);
+
+                setTimeout(() => {
+                      displaymassages.textContent = `Loading game...`
+                }, 8000);
+
+                setTimeout(() => {
+                    sessionStorage.setItem("name" , PlayersName)
+                      window.location.href = `introduction.html` 
+                  
+                }, 13000);
+            
+    
+            }
+
+
+ }
+
+ </script>
