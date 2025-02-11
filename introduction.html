@@ -74,6 +74,7 @@
   let SunMoonStar = document.getElementById("SunMoonStar")
 
   const guitar = new Audio("audio/guitar.wav");
+  const countdown = new Audio("audio/countdown.wav");
 
 
 
@@ -85,7 +86,8 @@ Continue.onclick = function () {
         Displayname.textContent = "You have chosen  Rock, Paper, Scissor..."
         setTimeout(() => {
             window.location.href = "RockPaperScissor.html"
-        }, 2000);
+            countdown.play()
+        }, 5000);
         
     }
     else if (FireWaterPlant.checked) {
