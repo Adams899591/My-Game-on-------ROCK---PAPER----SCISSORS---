@@ -29,9 +29,9 @@
      <div>
         <h1>Rock, Paper, Scissor</h1>
              <div class="choices">
-                <button class="play"   onclick="playgames(`Rock`)">🛑  🏵</button>
-                <button class="play"   onclick="playgames(`Paper`)">✍ 📜</button>
-                <button class="play"   onclick="playgames(`Scissor`)">🎁 ✂</button>
+                <button class="play"   onclick="playgames(`Rock`)">🛑  </button>
+                <button class="play"   onclick="playgames(`Paper`)"> 📜</button>
+                <button class="play"   onclick="playgames(`Scissor`)">✂</button>
              </div>
                    
                         <p id="player-display"></p>
@@ -42,10 +42,12 @@
               
      </div>
 </div>
-                             <!-- show result -->
-                              <div style="display: none;" id="third">
-                                <h1 >hello</h1>
-                              </div>
+                               
+                      <div style="display: none;" id="mmm">
+                       <div>
+                        <h1>hello</h1>
+                       </div>
+                </div>
 
     
 </body>
@@ -107,6 +109,8 @@ body{
 
 <script>
     
+
+    //   Enter = document.getElementById("second-container").innerHTML
     document.getElementById("first-container");
       document.getElementById("second-container");
   let Name =   document.getElementById("Name");
@@ -116,6 +120,7 @@ body{
 
     document.getElementById("Continue").onclick = function () {
    
+        
         if (Name.value == "") {
             display.style.color = "red"
             display.textContent = "Your name cant be empty"
@@ -133,48 +138,32 @@ body{
                      document.getElementById("first-container").innerHTML =  Enter;
                 }, 4000);
 
-            }         
+            }   
+            
      
         document.getElementById("Player").textContent =  ` 👮‍♂️  ${Name.value} Score:  `
 
+                                        //  stop
 
 
+// stop
     }
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         
-    
-
-
-
-    
-
 
        playersscorecount = 0
        computersscorecount = 0
  
 
     function playgames(playerchoice) {
+    
 
                     //    my work on second container
-        const playerdisplay = document.getElementById("player-display")
+         playerdisplay = document.getElementById("player-display")
     const computerdisplay = document.getElementById("computer-display")
     const resultdisplay = document.getElementById("result-display")
      const choice = [`Rock`,`Paper`,`Scissor`]
@@ -209,64 +198,67 @@ body{
     }
  
                 
-                 playerdisplay.textContent = `PLAYER:      ${playerchoice}`;
-                 computerdisplay.textContent =  ` COMPUTER:      ${computerchoice}`;
+                //  playerdisplay.textContent = `PLAYER:      ${playerchoice}`;
+                //  computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
                  resultdisplay.textContent = result;
 
-
+                
 
                  resultdisplay.classList.remove("bluetext","redtext")
                  switch (result) {
                     case "YOU WIN! 👮‍♂️": 
-                    playersscorecount++ 
-                    playercount.textContent =  playersscorecount
+                    if (playersscorecount < 5) {                     //runs when players score is lesser than 5
+                        playersscorecount++                          //add players score 
+                        playercount.textContent =  playersscorecount //show players score
+                        playerdisplay.textContent = `PLAYER:      ${playerchoice}`;   // display players choices 
+                      
+                    }
+
+                    else if (playercount.textContent  == 5) {           //runs when  players score is equal to 5 
+                        playercount.textContent = "you won Adams"       //changes players count to 
+                        playercount.textContent.disable = true          // disable futher count 
+                        playerdisplay.textContent = "congratulation u have won the game" //  players choice displayes 
+                        playerdisplay.textContent.disable = true   //disablesed choice displayes 
+                        // window.location.href = "congratonRockPaperScissor.html"
+                     
+                  
+                    
+                       
                
-                 
+                    }
+                    
+                    
                     resultdisplay.classList.add("bluetext");
 
                         break;
                     case "YOU LOOSE 🏃‍♂️": 
-                    computersscorecount++ 
-                    computercount.textContent =      computersscorecount
+                    // computersscorecount++ 
+                    // computercount.textContent =      computersscorecount
                     resultdisplay.classList.add("redtext")
+
+                    if ( computersscorecount < 5) {
+                        computersscorecount++ 
+                        computercount.textContent =      computersscorecount
+                         computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
+                    }
+
+                    if (computercount.textContent == 5) {
+                        computercount.textContent = "computer won"
+                        computercount.textContent.disable = true            
+                         computerdisplay.textContent = "computer wins the game "         
+                         computerdisplay.textContent.disable = true
+                      
+                    }
                   
                         break;
-                    // default:
 
-                    //     break;
-
-                    
-                 
-                 }
-
-    if (   playercount.textContent   == 5 ) {
-       
-                  
-                 } 
-
+    
+                       
     }
 
-
-
-    // if (playercount.textContent >= 5) {
-    //                     DISPLAY =  document.getElementById("third-container").innerHTML;
-    //               document.getElementById("second-container").innerHTML = DISPLAY
-    //                 }
-
-
-
-    //  if (playercount.textContent > computercount.textContent  ) {
-    //   document.getElementById("hello").textContent = "you wine userrf"
-    //              }
-
-    // switch (key) {
-    //     case value:
-            
-    //         break;
     
-    //     default:
-    //         break;
-    // }
+
+ }
 
 </script>
 
