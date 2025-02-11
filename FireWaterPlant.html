@@ -37,17 +37,33 @@
                         <p id="player-display"></p>
                         <p id="computer-display"></p>
                         <p id="result-display"> </p>
-                     
-                
-              
+                                
      </div>
 </div>
-                               
-                      <div style="display: none;" id="mmm">
-                       <div>
-                        <h1>hello</h1>
-                       </div>
-                </div>
+
+
+                                <!-- display players massage  -->
+                                <!-- my work on players victory 👮‍♂️ -->
+                      <div style="display: none;" id="players-victory">
+                             <p class="dashes">--------------------------------------</p>
+                             <p id="players-victory-1">👮‍♂️ Congratulations  🎉 🎉    </p>
+                             <p class="dashes">--------------------------------------</p>
+                             <p class="players-victory-2">👏 You did an amazing job 👏</p>
+                             <p class="players-victory-3">🏆</p>         
+                     
+                        </div>
+
+
+                        <!-- display computer massage  -->
+                         <!-- my work on computers victory -->
+                        <div style="display: none;" id="computers-victory">
+                            <p class="dashes">--------------------------------------</p>
+                            <p id="players-victory-1">  ⚠ Game Over `${Name.value}` ⚠ </p>
+                            <p class="dashes">--------------------------------------</p>
+                            <p class="players-victory-2">😞 Oh no! The computer won this round😌</p>
+                            <p class="players-victory-2">💔 Better luck next time</p>
+                            <p class="players-victory-3">😥</p>         
+                      </div>
 
     
 </body>
@@ -103,6 +119,27 @@ body{
 .redtext{
     color: red;
 }
+                                  /* my work on players victory 👮‍♂️ */
+#players-victory{
+    text-align: center;
+    padding-top: 3%;
+}
+.dashes{
+    font-weight: bolder;
+    font-size: 25px;
+}
+#players-victory-1{
+    font-weight: bolder;
+    font-size: 30px;
+}
+.players-victory-2{
+    font-weight: bolder;
+    font-size: 25px;
+}
+.players-victory-3{
+    font-weight: bolder;
+    font-size: 900%;
+}
 </style>
 
 
@@ -130,31 +167,22 @@ body{
                 display.style.color = "white"
                 display.style.fontWeight = "bold"
                 display.textContent = `Welcome 🙋‍♂️ ${Name.value}`
+               document.getElementById("Player").textContent =  ` 👮‍♂️  ${Name.value} Score:  `
                 
 
               
                 setTimeout(() => {
-                    Enter = document.getElementById("second-container").innerHTML;
-                     document.getElementById("first-container").innerHTML =  Enter;
-                }, 4000);
-
-            }   
-            
-     
-        document.getElementById("Player").textContent =  ` 👮‍♂️  ${Name.value} Score:  `
-
-                                        //  stop
-
-
-// stop
-    }
+                    document.getElementById("first-container").style.display = "none"
+                     document.getElementById("second-container").style.display = "block"
+                  
 
 
 
 
 
-        
 
+                    //  function second container
+                    
        playersscorecount = 0
        computersscorecount = 0
  
@@ -203,28 +231,23 @@ body{
                  resultdisplay.textContent = result;
 
                 
-
+                
                  resultdisplay.classList.remove("bluetext","redtext")
                  switch (result) {
                     case "YOU WIN! 👮‍♂️": 
-                    if (playersscorecount < 5) {                     //runs when players score is lesser than 5
+                    if (playersscorecount < 2) {                     //runs when players score is lesser than 5
                         playersscorecount++                          //add players score 
                         playercount.textContent =  playersscorecount //show players score
-                        playerdisplay.textContent = `PLAYER:      ${playerchoice}`;   // display players choices 
-                      
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉👉👉  ${playerchoice}`;   // display players choices 
+                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉👉👉  ${computerchoice}`;
+                    
                     }
 
-                    else if (playercount.textContent  == 5) {           //runs when  players score is equal to 5 
-                        playercount.textContent = "you won Adams"       //changes players count to 
-                        playercount.textContent.disable = true          // disable futher count 
-                        playerdisplay.textContent = "congratulation u have won the game" //  players choice displayes 
-                        playerdisplay.textContent.disable = true   //disablesed choice displayes 
-                        // window.location.href = "congratonRockPaperScissor.html"
-                     
-                  
-                    
-                       
-               
+                    else if (playercount.textContent  == 2) {           //runs when  players score is equal to 5 
+                                                
+                         document.getElementById("second-container").style.display = "none"
+                         document.getElementById("players-victory").style.display = "block"
+                        document.getElementById("players-victory-1").textContent += `  ${Name.value} `
                     }
                     
                     
@@ -239,14 +262,13 @@ body{
                     if ( computersscorecount < 5) {
                         computersscorecount++ 
                         computercount.textContent =      computersscorecount
-                         computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉👉👉  ${playerchoice}`;
+                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉👉👉  ${computerchoice}`;
                     }
 
                     if (computercount.textContent == 5) {
-                        computercount.textContent = "computer won"
-                        computercount.textContent.disable = true            
-                         computerdisplay.textContent = "computer wins the game "         
-                         computerdisplay.textContent.disable = true
+                        document.getElementById("second-container").style.display = "none"
+                        document.getElementById("computers-victory").style.display = "block"
                       
                     }
                   
@@ -259,6 +281,166 @@ body{
     
 
  }
+
+
+
+
+
+
+                 
+
+
+
+
+
+
+
+
+
+
+                           // attach of event listiner
+                           document.querySelectorAll(".play").forEach(button => {
+                                    button.onclick = function () {
+                                        playgames(this.getAttribute("onclick").match(/`(.*?)`/)[1]);
+                                    };
+                           });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                }, 4000);
+
+
+
+
+// stop
+            }   
+        
+// stop
+    };
+
+
+
+
+
+        
+
+//        playersscorecount = 0
+//        computersscorecount = 0
+ 
+
+//     function playgames(playerchoice) {
+    
+
+//                     //    my work on second container
+//          playerdisplay = document.getElementById("player-display")
+//     const computerdisplay = document.getElementById("computer-display")
+//     const resultdisplay = document.getElementById("result-display")
+//      const choice = [`Rock`,`Paper`,`Scissor`]
+
+//                    // players and compter score incrememt
+//      const playercount = document.getElementById("player-count");
+//      const computercount = document.getElementById("computer-count");
+
+//            computerchoice = choice[Math.floor(Math.random() * 3)]
+//            console.log(computerchoice);
+//             result = ""
+//             // count = 0
+
+//            if (playerchoice === computerchoice) {
+//                     result = "IT IS A TIE ❌"
+//            } else  {
+//                  switch (playerchoice) {
+//                     case `Rock`:
+//                         result= (computerchoice ===`Paper` ) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;
+                      
+//                         break;
+//                     case `Paper`:
+//                         result= (computerchoice === `Scissor`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
+                        
+//                         break;
+//                     case `Scissor`:
+//                         result = (computerchoice ===  `Rock`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
+                        
+//                         break;   
+                        
+//            }          
+//     }
+ 
+                
+//                 //  playerdisplay.textContent = `PLAYER:      ${playerchoice}`;
+//                 //  computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
+//                  resultdisplay.textContent = result;
+
+                
+
+//                  resultdisplay.classList.remove("bluetext","redtext")
+//                  switch (result) {
+//                     case "YOU WIN! 👮‍♂️": 
+//                     if (playersscorecount < 5) {                     //runs when players score is lesser than 5
+//                         playersscorecount++                          //add players score 
+//                         playercount.textContent =  playersscorecount //show players score
+//                         playerdisplay.textContent = `PLAYER:      ${playerchoice}`;   // display players choices 
+                      
+//                     }
+
+//                     else if (playercount.textContent  == 5) {           //runs when  players score is equal to 5 
+//                         playercount.textContent = "you won Adams"       //changes players count to 
+//                         playercount.textContent.disable = true          // disable futher count 
+//                         playerdisplay.textContent = "congratulation u have won the game" //  players choice displayes 
+//                         playerdisplay.textContent.disable = true   //disablesed choice displayes 
+//                         // window.location.href = "congratonRockPaperScissor.html"
+                     
+                  
+                    
+                       
+               
+//                     }
+                    
+                    
+//                     resultdisplay.classList.add("bluetext");
+
+//                         break;
+//                     case "YOU LOOSE 🏃‍♂️": 
+//                     // computersscorecount++ 
+//                     // computercount.textContent =      computersscorecount
+//                     resultdisplay.classList.add("redtext")
+
+//                     if ( computersscorecount < 5) {
+//                         computersscorecount++ 
+//                         computercount.textContent =      computersscorecount
+//                          computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
+//                     }
+
+//                     if (computercount.textContent == 5) {
+//                         computercount.textContent = "computer won"
+//                         computercount.textContent.disable = true            
+//                          computerdisplay.textContent = "computer wins the game "         
+//                          computerdisplay.textContent.disable = true
+                      
+//                     }
+                  
+//                         break;
+
+    
+                       
+//     }
+
+    
+
+//  }
 
 </script>
 
