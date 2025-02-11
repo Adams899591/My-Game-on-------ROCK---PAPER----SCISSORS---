@@ -52,7 +52,6 @@
                              <p class="players-victory-2">👏 You did an amazing job 👏</p>
                              <p style="color: blue;"><b>Game Mode: &nbsp;&nbsp; Rock, Paper, Scissors</b></p>
                              <p id="games"></p>
-                             <p id="games-won"></p>
                              <p id="Display-performance">Your performance rating is 👉 &nbsp;&nbsp;</p>
                              <p id="RANKING">     </p>
                              <p class="players-victory-3">🏆</p>         
@@ -140,7 +139,7 @@ body{
     font-weight: bolder;
     font-size: 20px;
 }
-.players-victory-2, #Display-performance, #games, #games-won{
+.players-victory-2, #Display-performance, #games{
     font-weight: bolder;
     font-size: 20px;
 }
@@ -152,13 +151,13 @@ body{
 .players-victory-3{
     font-weight: bolder;
     font-size: 700%;
-    margin-top: -20;
+    margin-top: -10;
 }
 
                                     /* my work on computer victory  🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️*/
 #computers-victory{
     text-align: center;
-    margin-top: 5%;
+    margin-top: 7%;
 }
 #computers-victory-1{
     font-weight: bolder;
@@ -171,7 +170,7 @@ body{
 .computers-victory-3{
     font-weight: bolder;
     font-size: 700%;
-    margin-top: -15;
+    margin-top: -10;
 }
 #Display-performance-2{
     font-weight: bolder;
@@ -216,16 +215,13 @@ body{
                     //  function second container
                     // here i neastd the second container
                     
-        playersscorecount = 0
+       playersscorecount = 0
        computersscorecount = 0
-        game = 0
+               game = 0
  
 
     function playgames(playerchoice) {
-         game++   // calculate the number of times to win a round
-
-
-
+    game++   // calculate the number of times to win a round
 
                     //    my work on second container
          playerdisplay = document.getElementById("player-display")
@@ -277,16 +273,21 @@ body{
                         playercount.textContent =  playersscorecount //show players score
                         playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;   // display players choices 
                         computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉  ${computerchoice}`;
-                        resultdisplay.textContent = result;
 
 
                     
 
                                     if (game == 20 ||  game > 20 ) {
                                         
- 
 
-                                            if ( playersscorecount / 20 * 100  <= 30) {
+
+                                                // document.getElementById("second-container").style.display = "none"
+                                                // document.getElementById("players-victory").style.display = "block"
+                                                // document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
+                                                // document.getElementById("games").textContent = `it took you  ${game} rounds to win against the computer`
+                                                // document.getElementById("Display-performance").textContent += `${playersscorecount/ 20 * 100}% `  
+
+                                            if ( playersscorecount / 20 * 100  <= 35) {
                                                              document.getElementById("second-container").style.display = "none"
                                                             document.getElementById("computers-victory").style.display = "block"
 
@@ -296,15 +297,15 @@ body{
                                                 
                                             } else {
                                        
-                                                            
-                                                 if (playersscorecount / 20 * 100  <= 40) {
-                                                          document.getElementById("RANKING").textContent = `No Ranking ❌`
-                                                }else if (playersscorecount / 20 * 100    <= 59) {
-                                                          document.getElementById("RANKING").textContent = `Good ⭐`
-                                                }else if (playersscorecount / 20 * 100    <= 69) {
-                                                         document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
-                                                }else   if (playersscorecount / 20 * 100     >= 70 ) {
-                                                         document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
+                                                    
+                                                if ( playersscorecount / 20 * 100  < 49) {
+                                                    document.getElementById("RANKING").textContent = `No Ranking ❌`
+                                                }else if (playersscorecount / 20 * 100    < 59) {
+                                                    document.getElementById("RANKING").textContent = `Good ⭐`
+                                                }else if (playersscorecount / 20 * 100    < 69) {
+                                                    document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
+                                                }else   if (playersscorecount / 20 * 100     > 70 ) {
+                                                    document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
                                                 } 
 
 
@@ -312,16 +313,43 @@ body{
                                                 document.getElementById("second-container").style.display = "none"
                                                  document.getElementById("players-victory").style.display = "block"
                                                  document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
-                                                 document.getElementById("games").textContent = `Total rounds played:  ${game} `
-                                                 document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
+                                                 document.getElementById("games").textContent = `it took you  ${game} rounds to win against the computer`
                                                   document.getElementById("Display-performance").textContent += `${playersscorecount / 20 * 100}% `  
                                             } 
 
                                     }
 
+
+
+
+
+
+
+
+
                     
                     }
-                 
+                    // playercount.textContent
+            //          if ( game == 20) {           //runs when  players score is equal to 5 
+                                                
+            //              document.getElementById("second-container").style.display = "none"
+            //              document.getElementById("players-victory").style.display = "block"
+            //             document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
+            //             document.getElementById("games").textContent = `it took you  ${game} rounds to win against the computer`
+            //             // document.getElementById("Display-performance").textContent += `${playersscorecount/ 20 * 100}% `  
+
+
+            //              if ( game / 20 * 100  < 50) {
+            //                  document.getElementById("RANKING").textContent = `No Ranking ❌`
+            //             }else if (game / 20 * 100    < 69) {
+            //                   document.getElementById("RANKING").textContent = `Good ⭐`
+            //             }else if (game / 20 * 100    < 89) {
+            //                   document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
+            //             }else   if (game / 20 * 100     > 90 ) {
+            //                 document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
+            //             } 
+            //  //  the closing main else if statement 
+            //         }
                     
                     
                     resultdisplay.classList.add("bluetext");
@@ -337,15 +365,15 @@ body{
                         computercount.textContent =      computersscorecount
                         playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;
                          computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉  ${computerchoice}`;
-                         resultdisplay.textContent = result;
-
+// 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+                //   000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
 
                             if (game == 20  ||  game > 20) { 
                                         
 
-
+// `  
                     
-                                    if (playersscorecount / 20 * 100  <= 30) {
+                                    if (playersscorecount / 20 * 100  <= 35) {
                                                      document.getElementById("second-container").style.display = "none"
                                                     document.getElementById("computers-victory").style.display = "block"
 
@@ -356,30 +384,80 @@ body{
                                     } else {
 
                                             
-                                        if (playersscorecount / 20 * 100  <= 40) {
+                                        if (playersscorecount / 20 * 100  < 49) {
                                             document.getElementById("RANKING").textContent = `No Ranking ❌`
-                                        }else if (playersscorecount / 20 * 100    <= 59) {
+                                        }else if (playersscorecount / 20 * 100    < 59) {
                                             document.getElementById("RANKING").textContent = `Good ⭐`
-                                        }else if (playersscorecount / 20 * 100    <= 69) {
+                                        }else if (playersscorecount / 20 * 100    < 69) {
                                             document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
-                                        }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                        }else   if (playersscorecount / 20 * 100     > 70 ) {
                                             document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
                                         } 
                                         document.getElementById("second-container").style.display = "none"
                                         document.getElementById("players-victory").style.display = "block"
                                         document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
-                                        document.getElementById("games").textContent = `Total rounds played:  ${game} `
-                                          document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
+                                        document.getElementById("games").textContent = `it took you  ${game} rounds to win against the computer`
                                         document.getElementById("Display-performance").textContent += `${playersscorecount / 20 * 100}% `  
                                     }
 
 
                             }
 
-                                                 
+                                  
+                    
+
+                                     
+// 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+                //  99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
+                                        //  if ( game / 20 * 100  < 50) {
+                                        //      document.getElementById("RANKING").textContent = `No Ranking ❌`
+                                        // }else if (game / 20 * 100    < 69) {
+                                        //       document.getElementById("RANKING").textContent = `Good ⭐`
+                                        // }else if (game / 20 * 100    < 89) {
+                                        //       document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
+                                        // }else   if (game / 20 * 100     > 90 ) {
+                                        //     document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
+                                        // } 
+                                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
 
                     }
-                         
+                    // computercount.textContent
+                    // if (game == 20) {
+                    //     document.getElementById("second-container").style.display = "none"
+                    //     document.getElementById("computers-victory").style.display = "block"
+
+                    //     document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
+                    //     document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
+
+                    // }
+                  
+                    //     break;
+                    //  case "IT IS A TIE ❌": 
+                    //     if (playerchoice === computerchoice) {
+                    //         computersscorecount--
+                    //         playersscorecount--
+                    //     }
+                    //         break;
+
     
                        
     }

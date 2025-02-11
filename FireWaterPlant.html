@@ -50,6 +50,7 @@
                              <p id="players-victory-1">👮‍♂️ Congratulations  🎉     </p>
                              <p class="dashes">--------------------------------------</p>
                              <p class="players-victory-2">👏 You did an amazing job 👏</p>
+                             <p id="number"></p>
                              <p class="players-victory-3">🏆</p>         
                      
                         </div>
@@ -200,10 +201,10 @@ body{
                     
        playersscorecount = 0
        computersscorecount = 0
- 
+             game = 0
 
     function playgames(playerchoice) {
-    
+    game++  // calculate the number of times to win a round
 
                     //    my work on second container
          playerdisplay = document.getElementById("player-display")
@@ -263,6 +264,7 @@ body{
                          document.getElementById("second-container").style.display = "none"
                          document.getElementById("players-victory").style.display = "block"
                         document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
+                        document.getElementById("number").textContent = `it took you  ${game} rounds to win against the computer`
                     }
                     
                     
