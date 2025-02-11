@@ -9,7 +9,7 @@
 
      <!-- work on first container -->
      <div id="first-container">
-        <h1>Rock, Paper, Scissor</h1>
+        <h1>Fire, Water, Plant </h1>
        <label  for=""><b>Confirm players Name:</b></label>
         <br>
         <br>
@@ -24,18 +24,19 @@
      <!-- my work on second container -->
     <div style="display: none;" id="second-container">
            
-        <h2 id="Player">                   </h2>              <span style="color: blue;"  id="player-count">0</span>  
-        <h2 id="computer"> 🏃‍♂️ Computer Score : </h2>          <span style="color: red;" id="computer-count">0</span>
+        <h3 id="Player">                   </h3>              <span style="color: blue;"  id="player-count">0</span>  
+        <h3 id="computer"> 🏃‍♂️ Computer Score : </h3>          <span style="color: red;" id="computer-count">0</span>
      <div>
         <h1>Rock, Paper, Scissor</h1>
              <div class="choices">
-                <button class="play"   onclick="playgames(`Rock`)">🛑  </button>
-                <button class="play"   onclick="playgames(`Paper`)"> 📜</button>
-                <button class="play"   onclick="playgames(`Scissor`)">✂</button>
+                <button class="play"   onclick="playgames(`Rock`)"> ₦ </button>
+                <button class="play"   onclick="playgames(`Paper`)"> 🎶</button>
+                <button class="play"   onclick="playgames(`Scissor`)">🔥</button>
              </div>
                    
                         <p id="player-display"></p>
                         <p id="computer-display"></p>
+                        <p class="dashes" style="color: white;">--------------------------------------</p>
                         <p id="result-display"> </p>
                                 
      </div>
@@ -46,7 +47,7 @@
                                 <!-- my work on players victory 👮‍♂️ -->
                       <div style="display: none;" id="players-victory">
                              <p class="dashes">--------------------------------------</p>
-                             <p id="players-victory-1">👮‍♂️ Congratulations  🎉 🎉    </p>
+                             <p id="players-victory-1">👮‍♂️ Congratulations  🎉     </p>
                              <p class="dashes">--------------------------------------</p>
                              <p class="players-victory-2">👏 You did an amazing job 👏</p>
                              <p class="players-victory-3">🏆</p>         
@@ -58,11 +59,12 @@
                          <!-- my work on computers victory -->
                         <div style="display: none;" id="computers-victory">
                             <p class="dashes">--------------------------------------</p>
-                            <p id="players-victory-1">  ⚠ Game Over `${Name.value}` ⚠ </p>
+                            <p id="computers-victory-1">  ❌  Game Over ❌</p>
                             <p class="dashes">--------------------------------------</p>
-                            <p class="players-victory-2">😞 Oh no! The computer won this round😌</p>
-                            <p class="players-victory-2">💔 Better luck next time</p>
-                            <p class="players-victory-3">😥</p>         
+                            <p id="computers-victory-2">                         </p>
+                            <p class="dashes">--------------------------------------</p>
+                            <p id="computers-victory-2-1">Better luck next time </p>
+                            <p class="computers-victory-3">😥</p>         
                       </div>
 
     
@@ -111,7 +113,7 @@ body{
 }
 #player-display, #computer-display, #result-display {
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 20px;
 }
 .bluetext{
     color: blue;
@@ -119,10 +121,10 @@ body{
 .redtext{
     color: red;
 }
-                                  /* my work on players victory 👮‍♂️ */
+                                  /* my work on players victory 👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️*/
 #players-victory{
     text-align: center;
-    padding-top: 3%;
+    margin-top: 7%;
 }
 .dashes{
     font-weight: bolder;
@@ -130,13 +132,30 @@ body{
 }
 #players-victory-1{
     font-weight: bolder;
-    font-size: 30px;
+    font-size: 20px;
 }
 .players-victory-2{
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 20px;
 }
 .players-victory-3{
+    font-weight: bolder;
+    font-size: 900%;
+}
+                                    /* my work on computer victory  🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️*/
+#computers-victory{
+    text-align: center;
+    margin-top: 7%;
+}
+#computers-victory-1{
+    font-weight: bolder;
+    font-size: 30px;
+}
+#computers-victory-2, #computers-victory-2-1{
+    font-weight: bolder;
+    font-size: 15px;
+}
+.computers-victory-3{
     font-weight: bolder;
     font-size: 900%;
 }
@@ -174,14 +193,10 @@ body{
                 setTimeout(() => {
                     document.getElementById("first-container").style.display = "none"
                      document.getElementById("second-container").style.display = "block"
-                  
-
-
-
-
-
+        
 
                     //  function second container
+                    // here i neastd the second container
                     
        playersscorecount = 0
        computersscorecount = 0
@@ -238,8 +253,8 @@ body{
                     if (playersscorecount < 2) {                     //runs when players score is lesser than 5
                         playersscorecount++                          //add players score 
                         playercount.textContent =  playersscorecount //show players score
-                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉👉👉  ${playerchoice}`;   // display players choices 
-                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉👉👉  ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;   // display players choices 
+                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉  ${computerchoice}`;
                     
                     }
 
@@ -247,7 +262,7 @@ body{
                                                 
                          document.getElementById("second-container").style.display = "none"
                          document.getElementById("players-victory").style.display = "block"
-                        document.getElementById("players-victory-1").textContent += `  ${Name.value} `
+                        document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                     }
                     
                     
@@ -262,17 +277,25 @@ body{
                     if ( computersscorecount < 5) {
                         computersscorecount++ 
                         computercount.textContent =      computersscorecount
-                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉👉👉  ${playerchoice}`;
-                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉👉👉  ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;
+                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉  ${computerchoice}`;
                     }
 
                     if (computercount.textContent == 5) {
                         document.getElementById("second-container").style.display = "none"
                         document.getElementById("computers-victory").style.display = "block"
-                      
+
+                        document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
+                        document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                     }
                   
                         break;
+                    case "IT IS A TIE ❌": 
+                        if (playerchoice === computerchoice) {
+                            computersscorecount--
+                            playersscorecount--
+                        }
+                            break;
 
     
                        
@@ -282,22 +305,7 @@ body{
 
  }
 
-
-
-
-
-
-                 
-
-
-
-
-
-
-
-
-
-
+                        //    code that enable the second container to function well in the first code
                            // attach of event listiner
                            document.querySelectorAll(".play").forEach(button => {
                                     button.onclick = function () {
@@ -306,25 +314,7 @@ body{
                            });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 }, 4000);
-
-
-
-
 // stop
             }   
         

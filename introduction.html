@@ -7,26 +7,32 @@
 </head>
 <body>
     <div class="Container">
-        <h1 id="Display-name"></h1>
          <h1>How to Play</h1>
              <div class="All-paragraph">
                     <p>1. You will face of the computer in a classic <b>ROCK-PAPER-SCISSORS</b> battle.</p>
                     <p>2.  if you prefer something different, you can choose a unic mode like <b>Fire-Water-Plant, Lion-Hunter-Gun</b> and more!</p>
                     <p>3.  The Computer will randomely pick one, and you must choose your moves wisely.</p>
-                    <p>4.  The game will instantly tell you if you <b>Win, Loose, or Tie </b></p>
-                    <p>5. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
+                    <p>4. Choose <b>Rock, Paper, or scissor</b> to play against the computer.</p>
+                    <p>5.  The game will instantly tell you if you <b>Win, Lose, or Tie </b></p>
+                                         <!-- below 5  -->
+                               <span><b>➡ Winning:</b> You gain <b>1 point</b></span> <br>
+                               <span><b>➡ Losing:</b> The computer gain <b>1 point</b></span> <br>
+                               <span><b>➡ Both:</b> You and the computer lose <b>1 point</b></span> <br>
+                               <span>➡ The game is designed so that <b>whoever reaches 20 points first wins.</b> </span>
+                    <p>6. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
              </div>
             <h2> 😁  Game Mode</h2>
 
              <div class="All-paragraph">
-                <p><input type="radio" name=" GameMode" id="RockPaperScissor">💎  Classic  - <b>Rock, Paper, Scissor</b></p>
-                <p><input type="radio" name=" GameMode" id="FireWaterPlant">🔥  Element  -  <b>Fire, Water, Plant </b></p>
-                <p><input type="radio" name=" GameMode" id="LionHunterGun">🦁  Survival -  <b>Lion, Hunter, Gun</b></p>
-                <p><input type="radio" name=" GameMode" id="SunMoonStar">🌞 -     <b>Sun, Moon, Star</b></p>
+                <label for="RockPaperScissor">  <input type="radio" name=" GameMode" id="RockPaperScissor">💎  Classic  - <b>Rock, Paper, Scissor</b></label>   <br><br>
+                <label for="FireWaterPlant">    <input type="radio" name=" GameMode" id="FireWaterPlant">🔥  Element  -  <b>Fire, Water, Plant </b></label>      <br><br>
+                <label for="LionHunterGun">     <input type="radio" name=" GameMode" id="LionHunterGun">🦁  Survival -  <b>Lion, Hunter, Gun</b></label>         <br><br>
+                <label for="SunMoonStar">       <input type="radio" name=" GameMode" id="SunMoonStar">🌞 Space    <b>Sun, Moon, Star</b></label>                 <br><br>
 
                 <br>
+                <h3 id="Display-name"></h3>
                 <p><b>Choose wisely and let the battle begin!</b>       <button class="button-1" id="Continue">Continue</button></p>
-               
+          
 
              </div>
     </div>
@@ -76,26 +82,29 @@ Continue.onclick = function () {
     if (RockPaperScissor.checked) {
         guitar.play()
         Displayname.style.color = "green"
-        Displayname.textContent = "You have chosen  Rock, Paper, Scissor."
+        Displayname.textContent = "You have chosen  Rock, Paper, Scissor..."
         setTimeout(() => {
-            window.location.href = "FireWaterPlant.html"
+            window.location.href = "RockPaperScissor.html"
         }, 2000);
         
     }
     else if (FireWaterPlant.checked) {
         guitar.play()
          Displayname.style.color = "green"
-         Displayname.textContent = "You have chosen Fire, Water, Plant."
+         Displayname.textContent = "You have chosen Fire, Water, Plant..."
+         setTimeout(() => {
+             window.location.href = "FireWaterPlant.html"
+         }, 2000);
     }
     else if (LionHunterGun.checked) {
         guitar.play()
          Displayname.style.color = "green"
-         Displayname.textContent = "You have chosen Lion, Hunter, Gun."
+         Displayname.textContent = "You have chosen Lion, Hunter, Gun..."
     }
     else if (SunMoonStar.checked) {
         guitar.play()
          Displayname.style.color = "green"
-         Displayname.textContent = "You have chosen Sun, Moon,  Star."
+         Displayname.textContent = "You have chosen Sun, Moon,  Star..."
     }else{
         guitar.play()
         Displayname.style.color = "red"

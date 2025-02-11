@@ -27,6 +27,7 @@
     <br>
     <br>
     <button class="button-1"  id="Start-Game"><b>Start Game</b></button>
+    <audio autoplay loop src="audio/complected.wav"></audio>
 
    </div>
   
@@ -82,7 +83,7 @@ text-align: center;
          if (PlayersName.value === ``) {
             gamssound.play()
                   displaymassages.style.color = "red"
-                  displaymassages.textContent = "players name can not be enpty"                    
+                  displaymassages.textContent = "players name can not be empty"                    
            }
          else if (PlayersName.value != "") {  
             gamssound.play()       
