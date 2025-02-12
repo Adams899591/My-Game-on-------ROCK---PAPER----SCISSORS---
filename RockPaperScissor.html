@@ -294,7 +294,7 @@ body{
                  resultdisplay.classList.remove("bluetext","redtext")
                  switch (result) {
                     case "YOU WIN! 👮‍♂️": 
-                    if (playersscorecount < 20) {                     //runs when players score is lesser than 5
+                    if (playersscorecount < 50) {                     //runs when players score is lesser than 5
                         playersscorecount++                          //add players score 
                         playercount.textContent =  playersscorecount //show players score
                         playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;   // display players choices 
@@ -304,28 +304,28 @@ body{
 
                     
 
-                                    if (game == 20 ||  game > 20 ) {
+                                    if (game == 50 ||  game > 50 ) {
                                         
  
 
-                                            if ( playersscorecount / 20 * 100  <= 30) {
+                                            if ( playersscorecount / 50 * 100  <= 30) {
                                                              document.getElementById("second-container").style.display = "none"
                                                             document.getElementById("computers-victory").style.display = "block"
 
                                                             document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                                                              document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
+                                                              document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}%  which is low and needs improvement`
                                                             document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                                                 
                                             } else {
                                        
                                                             
-                                                 if (playersscorecount / 20 * 100  <= 40) {
+                                                 if (playersscorecount / 50 * 100  <= 40) {
                                                           document.getElementById("RANKING").textContent = `No Ranking ❌`
-                                                }else if (playersscorecount / 20 * 100    <= 59) {
+                                                }else if (playersscorecount / 50 * 100    <= 59) {
                                                           document.getElementById("RANKING").textContent = `Good ⭐`
-                                                }else if (playersscorecount / 20 * 100    <= 69) {
+                                                }else if (playersscorecount / 50 * 100    <= 69) {
                                                          document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
-                                                }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                                }else   if (playersscorecount / 50 * 100     >= 70 ) {
                                                          document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
                                                 } 
 
@@ -336,7 +336,7 @@ body{
                                                  document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                                                  document.getElementById("games").textContent = `Total rounds played:  ${game} `
                                                  document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
-                                                  document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
+                                                  document.getElementById("Display-performance").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}% `  
                                             } 
 
                                     }
@@ -354,7 +354,7 @@ body{
                     // computercount.textContent =      computersscorecount
                     resultdisplay.classList.add("redtext")
 
-                    if ( computersscorecount < 20) {
+                    if ( computersscorecount < 50) {
                         computersscorecount++ 
                         computercount.textContent =      computersscorecount
                         playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;
@@ -362,29 +362,29 @@ body{
                          resultdisplay.textContent = result;
 
 
-                            if (game == 20  ||  game > 20) { 
+                            if (game == 50  ||  game > 50) { 
                                         
 
 
                     
-                                    if (playersscorecount / 20 * 100  <= 30) {
+                                    if (playersscorecount / 50 * 100  <= 30) {
                                                      document.getElementById("second-container").style.display = "none"
                                                     document.getElementById("computers-victory").style.display = "block"
 
                                                     document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                                                     document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
+                                                     document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}%  which is low and needs improvement`
                                                     document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                                         
                                     } else {
 
                                             
-                                        if (playersscorecount / 20 * 100  <= 40) {
+                                        if (playersscorecount / 50 * 100  <= 40) {
                                             document.getElementById("RANKING").textContent = `No Ranking ❌`
-                                        }else if (playersscorecount / 20 * 100    <= 59) {
+                                        }else if (playersscorecount / 50 * 100    <= 59) {
                                             document.getElementById("RANKING").textContent = `Good ⭐`
-                                        }else if (playersscorecount / 20 * 100    <= 69) {
+                                        }else if (playersscorecount / 50 * 100    <= 69) {
                                             document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
-                                        }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                        }else   if (playersscorecount / 50 * 100     >= 70 ) {
                                             document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
                                         } 
                                         document.getElementById("second-container").style.display = "none"
@@ -392,7 +392,7 @@ body{
                                         document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                                         document.getElementById("games").textContent = `Total rounds played:  ${game} `
                                           document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
-                                        document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
+                                        document.getElementById("Display-performance").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}% `  
                                     }
 
 

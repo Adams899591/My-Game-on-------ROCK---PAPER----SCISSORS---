@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock - Paper - Scissor</title>
-    <!-- // 🪨 🔥 💦 ☘️ 🦁 🔫 🌞 🌝 ✨  🚀🌌 -->
+    <title>Sun - Moon - Star</title>
+    <!-- // 🪨 🔥 💦 ☘️ 🦁 🔫 🌞 🌝 ✨  🌌 🚀-->
 </head>
 <body>
 
      <!-- work on first container -->
      <div id="first-container">
-        <h1>Rock, Paper, Scissor</h1>
+        <h1>Sun, Moon, Star</h1>
        <label  for=""><b>Confirm players Name:</b></label>
         <br>
         <br>
@@ -28,11 +28,11 @@
         <h3 id="Player">                   </h3>              <span style="color: blue;"  id="player-count">0</span>  
         <h3 id="computer"> 🏃‍♂️ Computer Score : </h3>          <span style="color: red;" id="computer-count">0</span>
      <div>
-        <h1>Rock, Paper, Scissor</h1>
+        <h1>Sun, Moon, Star</h1>
              <div class="choices">
-                <button class="play"   onclick="playgames(`Rock`)">🛑  </button>
-                <button class="play"   onclick="playgames(`Paper`)">📜</button>
-                <button class="play"   onclick="playgames(`Scissor`)">✂</button>
+                <button class="play"   onclick="playgames(`Sun`)"> 🌞</button>
+                <button class="play"   onclick="playgames(`Moon`)"> 🌝 </button>
+                <button class="play"   onclick="playgames(`Star`)"> ⭐</button>
              </div>
                    
                         <p id="player-display"></p>
@@ -51,7 +51,7 @@
                              <p id="players-victory-1">👮‍♂️ Congratulations  🎉     </p>
                              <p class="dashes">--------------------------------------</p>
                              <p class="players-victory-2">👏 You did an amazing job 👏</p>
-                             <p style="color: blue;"><b>Game Mode: &nbsp;&nbsp; Rock, Paper, Scissors</b></p>
+                             <p style="color: blue;"><b>Game Mode: &nbsp;&nbsp; Sun, Moon, Star.</b></p>
                              <p id="games"></p>
                              <p id="games-won"></p>
                              <p id="Display-performance">Your performance rating is 👉 &nbsp;&nbsp;</p>
@@ -240,7 +240,7 @@ body{
        computersscorecount = 0
         game = 0
  
-            const music = new Audio("audio/rock,paper,scissor.mp3");                                                       // GAME MUSIC
+            const music = new Audio("audio/sun,moon,star.mp3");                                                       // GAME MUSIC
     function playgames(playerchoice) {
          game++   // calculate the number of times to win a round
          music.play()
@@ -251,7 +251,7 @@ body{
          playerdisplay = document.getElementById("player-display")
     const computerdisplay = document.getElementById("computer-display")
     const resultdisplay = document.getElementById("result-display")
-     const choice = [`Rock`,`Paper`,`Scissor`]
+     const choice = [`Sun`,`Moon`,`Star`]
 
                    // players and compter score incrememt
      const playercount = document.getElementById("player-count");
@@ -269,16 +269,16 @@ body{
                         resultdisplay.textContent = result;
            } else  {
                  switch(playerchoice) {
-                    case `Rock`:
-                        result = (computerchoice === `Scissor`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";
+                    case `Sun`:
+                        result = (computerchoice === `Star`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";
                       
                         break;
-                    case `Paper`:
-                        result= (computerchoice === `Rock`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
+                    case `Moon`:
+                        result= (computerchoice === `Sun`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;
-                    case `Scissor`:
-                        result = (computerchoice ===  `Paper`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
+                    case `Star`:
+                        result = (computerchoice ===  `Moon`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;   
                         
@@ -295,7 +295,7 @@ body{
                  resultdisplay.classList.remove("bluetext","redtext")
                  switch (result) {
                     case "YOU WIN! 👮‍♂️": 
-                    if (playersscorecount < 20) {                     //runs when players score is lesser than 5
+                    if (playersscorecount < 50) {                     //runs when players score is lesser than 5
                         playersscorecount++                          //add players score 
                         playercount.textContent =  playersscorecount //show players score
                         playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;   // display players choices 
@@ -305,28 +305,28 @@ body{
 
                     
 
-                                    if (game == 20 ||  game > 20 ) {
+                                    if (game == 50 ||  game > 50 ) {
                                         
  
 
-                                            if ( playersscorecount / 20 * 100  <= 30) {
+                                            if ( playersscorecount / 50 * 100  <= 30) {
                                                              document.getElementById("second-container").style.display = "none"
                                                             document.getElementById("computers-victory").style.display = "block"
 
                                                             document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                                                              document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
+                                                              document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}%  which is low and needs improvement`
                                                             document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                                                 
                                             } else {
                                        
                                                             
-                                                 if (playersscorecount / 20 * 100  <= 40) {
+                                                 if (playersscorecount / 50 * 100  <= 40) {
                                                           document.getElementById("RANKING").textContent = `No Ranking ❌`
-                                                }else if (playersscorecount / 20 * 100    <= 59) {
+                                                }else if (playersscorecount / 50 * 100    <= 59) {
                                                           document.getElementById("RANKING").textContent = `Good ⭐`
-                                                }else if (playersscorecount / 20 * 100    <= 69) {
+                                                }else if (playersscorecount / 50 * 100    <= 69) {
                                                          document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
-                                                }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                                }else   if (playersscorecount / 50 * 100     >= 70 ) {
                                                          document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
                                                 } 
 
@@ -337,7 +337,7 @@ body{
                                                  document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                                                  document.getElementById("games").textContent = `Total rounds played:  ${game} `
                                                  document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
-                                                  document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
+                                                  document.getElementById("Display-performance").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}% `  
                                             } 
 
                                     }
@@ -355,7 +355,7 @@ body{
                     // computercount.textContent =      computersscorecount
                     resultdisplay.classList.add("redtext")
 
-                    if ( computersscorecount < 20) {
+                    if ( computersscorecount < 50) {
                         computersscorecount++ 
                         computercount.textContent =      computersscorecount
                         playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;
@@ -363,12 +363,12 @@ body{
                          resultdisplay.textContent = result;
 
 
-                            if (game == 20  ||  game > 20) { 
+                            if (game == 50  ||  game > 50) { 
                                         
 
 
                     
-                                    if (playersscorecount / 20 * 100  <= 30) {
+                                    if (playersscorecount / 50 * 100  <= 30) {
                                                      document.getElementById("second-container").style.display = "none"
                                                     document.getElementById("computers-victory").style.display = "block"
 
@@ -379,13 +379,13 @@ body{
                                     } else {
 
                                             
-                                        if (playersscorecount / 20 * 100  <= 40) {
+                                        if (playersscorecount / 50 * 100  <= 40) {
                                             document.getElementById("RANKING").textContent = `No Ranking ❌`
-                                        }else if (playersscorecount / 20 * 100    <= 59) {
+                                        }else if (playersscorecount / 50 * 100    <= 59) {
                                             document.getElementById("RANKING").textContent = `Good ⭐`
-                                        }else if (playersscorecount / 20 * 100    <= 69) {
+                                        }else if (playersscorecount / 50 * 100    <= 69) {
                                             document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
-                                        }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                        }else   if (playersscorecount / 50 * 100     >= 70 ) {
                                             document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
                                         } 
                                         document.getElementById("second-container").style.display = "none"
@@ -393,7 +393,7 @@ body{
                                         document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                                         document.getElementById("games").textContent = `Total rounds played:  ${game} `
                                           document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
-                                        document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
+                                        document.getElementById("Display-performance").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}% `  
                                     }
 
 
@@ -422,6 +422,13 @@ body{
                             document.getElementById("end").onclick = function () {
                             window.location.href="index.html"
                             }
+
+
+
+
+
+
+
 
                         //    code that enable the second container to function well in the first code
                            // attach of event listiner

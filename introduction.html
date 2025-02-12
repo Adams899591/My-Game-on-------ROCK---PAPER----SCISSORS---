@@ -13,13 +13,22 @@
                     <p>2.  if you prefer something different, you can choose a unic mode like <b>Fire-Water-Plant, Lion-Hunter-Gun</b> and more!</p>
                     <p>3.  The Computer will randomely pick one, and you must choose your moves wisely.</p>
                     <p>4. Choose <b>Rock, Paper, or scissor</b> to play against the computer.</p>
-                    <p>5.  The game will instantly tell you if you <b>Win, Lose, or Tie </b></p>
+                    <p>5. You will play <b>50 rounds</b> of rock, paper, scissors <br> the game will instantly tell you if you <b>Win, Lose, or Tie </b></p>
                                          <!-- below 5  -->
                                <span><b>➡ Winning:</b> You gain <b>1 point</b></span> <br>
                                <span><b>➡ Losing:</b> The computer gain <b>1 point</b></span> <br>
-                               <span><b>➡ Both:</b> You and the computer lose <b>1 point</b></span> <br>
-                               <span>➡ The game is designed so that <b>whoever reaches 20 points first wins.</b> </span>
-                    <p>6. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
+                               <span><b>➡ Tie:</b> <b>No pointt</b> are awarded to either players</span>
+
+            <h2>Scoring and Ranking system</h2>
+                     <p>6. After <b>50 rounds</b> your total will determine your <b>performance ranking</b></p>
+                                <span><b>➡ Excellent</b> 70 and above wins ⭐⭐⭐</span> <br>
+                                <span><b>➡ Very Good</b> 60 - 69 wins  ⭐⭐</span> <br>
+                                <span><b>➡ Good</b> 45 - 59 wins ⭐</span> <br>
+                                <span><b>➡ Low Ranking</b> Low Ranking ❌</span> <br>
+                                <span><b>➡ Fail</b> Below 30 😥</span> 
+
+                               
+                    <p>7. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
              </div>
             <h2> 😁  Game Mode</h2>
 
@@ -51,7 +60,7 @@
 }
 .All-paragraph{
     font-family: 'Times New Roman', Times, serif;
-    font-size: larger;
+    font-size: large;
 }
 .button-1{
     background-color: rgba(0, 0, 255, 0.61);
@@ -96,16 +105,22 @@ Continue.onclick = function () {
          setTimeout(() => {
              window.location.href = "FireWaterPlant.html"
          }, 4000);
-    }
+    }          
     else if (LionHunterGun.checked) {
         guitar.play()
          Displayname.style.color = "green"
          Displayname.textContent = "You have chosen Lion, Hunter, Gun..."
+         setTimeout(() => {
+             window.location.href = "LionHunterGun.html"
+         }, 4000);
     }
     else if (SunMoonStar.checked) {
         guitar.play()
          Displayname.style.color = "green"
          Displayname.textContent = "You have chosen Sun, Moon,  Star..."
+         setTimeout(() => {
+            window.location.href = "SunMoonStar.html"
+         }, 4000);
     }else{
         guitar.play()
         Displayname.style.color = "red"

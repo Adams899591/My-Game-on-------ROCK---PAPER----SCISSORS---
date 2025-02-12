@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fire - Water - Plant</title>
-    <!-- // 🪨 🔥 💦 ☘️ 🦁 🔫 🌞 🌝 ✨  🌌 🚀-->
+    <title>Lion - Hunter - Gun</title>
 </head>
 <body>
 
      <!-- work on first container -->
      <div id="first-container">
-        <h1>Fire, Water, Plant</h1>
+        <h1>Lion, Hunter, Gun</h1>
        <label  for=""><b>Confirm players Name:</b></label>
         <br>
         <br>
@@ -28,11 +27,11 @@
         <h3 id="Player">                   </h3>              <span style="color: blue;"  id="player-count">0</span>  
         <h3 id="computer"> 🏃‍♂️ Computer Score : </h3>          <span style="color: red;" id="computer-count">0</span>
      <div>
-        <h1>Fire, Water, Plant</h1>
+        <h1>Lion, Hunter, Gun</h1>
              <div class="choices">
-                <button class="play"   onclick="playgames(`Fire`)"> 🔥</button>
-                <button class="play"   onclick="playgames(`Water`)"> 💦 </button>
-                <button class="play"   onclick="playgames(`Plant`)">☘️</button>
+                <button class="play"   onclick="playgames(`Lion`)">🦁  </button>
+                <button class="play"   onclick="playgames(`Hunter`)">🧔</button>
+                <button class="play"   onclick="playgames(`Gun`)"> 🔫 </button>
              </div>
                    
                         <p id="player-display"></p>
@@ -51,7 +50,7 @@
                              <p id="players-victory-1">👮‍♂️ Congratulations  🎉     </p>
                              <p class="dashes">--------------------------------------</p>
                              <p class="players-victory-2">👏 You did an amazing job 👏</p>
-                             <p style="color: blue;"><b>Game Mode: &nbsp;&nbsp; Fire, Water, Plant.</b></p>
+                             <p style="color: blue;"><b>Game Mode: &nbsp;&nbsp; Lion, Hunter, Gun</b></p>
                              <p id="games"></p>
                              <p id="games-won"></p>
                              <p id="Display-performance">Your performance rating is 👉 &nbsp;&nbsp;</p>
@@ -240,10 +239,10 @@ body{
        computersscorecount = 0
         game = 0
  
-            const music = new Audio("audio/fire,water,plant.mp3");                                                       // GAME MUSIC
+            const music = new Audio("audio/lion,hunter,gun.mp3");                                                       // GAME MUSIC
     function playgames(playerchoice) {
          game++   // calculate the number of times to win a round
-         music.play()
+         music.play() 
 
 
 
@@ -251,7 +250,7 @@ body{
          playerdisplay = document.getElementById("player-display")
     const computerdisplay = document.getElementById("computer-display")
     const resultdisplay = document.getElementById("result-display")
-     const choice = [`Fire`,`Water`,`Plant`]
+     const choice = [`Lion`,`Hunter`,`Gun`]
 
                    // players and compter score incrememt
      const playercount = document.getElementById("player-count");
@@ -269,16 +268,16 @@ body{
                         resultdisplay.textContent = result;
            } else  {
                  switch(playerchoice) {
-                    case `Fire`:
-                        result = (computerchoice === `Plant`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";
+                    case `Lion`:
+                        result = (computerchoice === `Gun`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";
                       
                         break;
-                    case `Water`:
-                        result= (computerchoice === `Fire`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
+                    case `Hunter`:
+                        result= (computerchoice === `Lion`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;
-                    case `Plant`:
-                        result = (computerchoice ===  `Water`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
+                    case `Gun`:
+                        result = (computerchoice ===  `Hunter`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;   
                         
@@ -373,7 +372,7 @@ body{
                                                     document.getElementById("computers-victory").style.display = "block"
 
                                                     document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                                                     document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
+                                                     document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 50 * 100).toFixed(1)}%  which is low and needs improvement`
                                                     document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                                         
                                     } else {
@@ -422,13 +421,6 @@ body{
                             document.getElementById("end").onclick = function () {
                             window.location.href="index.html"
                             }
-
-
-
-
-
-
-
 
                         //    code that enable the second container to function well in the first code
                            // attach of event listiner
