@@ -25,9 +25,9 @@
 
              <div class="All-paragraph">
                 <label for="RockPaperScissor">  <input type="radio" name=" GameMode" id="RockPaperScissor">💎  Classic  - <b>Rock, Paper, Scissor</b></label>   <br><br>
-                <label for="FireWaterPlant">    <input type="radio" name=" GameMode" id="FireWaterPlant">🔥  Element  -  <b>Fire, Water, Plant </b></label>      <br><br>
+                <label for="FireWaterPlant">    <input type="radio" name=" GameMode" id="FireWaterPlant">🌌   Element  -  <b>Fire, Water, Plant </b></label>      <br><br>
                 <label for="LionHunterGun">     <input type="radio" name=" GameMode" id="LionHunterGun">🦁  Survival -  <b>Lion, Hunter, Gun</b></label>         <br><br>
-                <label for="SunMoonStar">       <input type="radio" name=" GameMode" id="SunMoonStar">🌞 Space    <b>Sun, Moon, Star</b></label>                 <br><br>
+                <label for="SunMoonStar">       <input type="radio" name=" GameMode" id="SunMoonStar">🚀 Space    <b>Sun, Moon, Star</b></label>                 <br><br>
 
                 <br>
                 <h3 id="Display-name"></h3>
@@ -74,7 +74,7 @@
   let SunMoonStar = document.getElementById("SunMoonStar")
 
   const guitar = new Audio("audio/guitar.wav");
-  const countdown = new Audio("audio/countdown.wav");
+
 
 
 
@@ -86,8 +86,7 @@ Continue.onclick = function () {
         Displayname.textContent = "You have chosen  Rock, Paper, Scissor..."
         setTimeout(() => {
             window.location.href = "RockPaperScissor.html"
-            countdown.play()
-        }, 5000);
+        }, 4000);
         
     }
     else if (FireWaterPlant.checked) {
@@ -96,7 +95,7 @@ Continue.onclick = function () {
          Displayname.textContent = "You have chosen Fire, Water, Plant..."
          setTimeout(() => {
              window.location.href = "FireWaterPlant.html"
-         }, 2000);
+         }, 4000);
     }
     else if (LionHunterGun.checked) {
         guitar.play()

@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire - Water - Plant</title>
+    <!-- // 🪨 🔥 💦 ☘️ 🦁 🔫 🌞 🌝 ✨  🌌 🚀-->
 </head>
 <body>
 
      <!-- work on first container -->
      <div id="first-container">
-        <h1>Fire, Water, Plant </h1>
+        <h1>Fire, Water, Plant</h1>
        <label  for=""><b>Confirm players Name:</b></label>
         <br>
         <br>
@@ -27,11 +28,11 @@
         <h3 id="Player">                   </h3>              <span style="color: blue;"  id="player-count">0</span>  
         <h3 id="computer"> 🏃‍♂️ Computer Score : </h3>          <span style="color: red;" id="computer-count">0</span>
      <div>
-        <h1>Rock, Paper, Scissor</h1>
+        <h1>Fire, Water, Plant</h1>
              <div class="choices">
-                <button class="play"   onclick="playgames(`Rock`)"> ₦ </button>
-                <button class="play"   onclick="playgames(`Paper`)"> 🎶</button>
-                <button class="play"   onclick="playgames(`Scissor`)">🔥</button>
+                <button class="play"   onclick="playgames(`Fire`)"> 🔥</button>
+                <button class="play"   onclick="playgames(`Water`)"> 💦 </button>
+                <button class="play"   onclick="playgames(`Plant`)">☘️</button>
              </div>
                    
                         <p id="player-display"></p>
@@ -50,8 +51,13 @@
                              <p id="players-victory-1">👮‍♂️ Congratulations  🎉     </p>
                              <p class="dashes">--------------------------------------</p>
                              <p class="players-victory-2">👏 You did an amazing job 👏</p>
-                             <p id="number"></p>
-                             <p class="players-victory-3">🏆</p>         
+                             <p style="color: blue;"><b>Game Mode: &nbsp;&nbsp; Fire, Water, Plant.</b></p>
+                             <p id="games"></p>
+                             <p id="games-won"></p>
+                             <p id="Display-performance">Your performance rating is 👉 &nbsp;&nbsp;</p>
+                             <p id="RANKING">     </p>
+                             <p class="players-victory-3">🏆</p>  
+                             <button id="End">Restart Game</button>       
                      
                         </div>
 
@@ -64,8 +70,10 @@
                             <p class="dashes">--------------------------------------</p>
                             <p id="computers-victory-2">                         </p>
                             <p class="dashes">--------------------------------------</p>
+                            <p id="Display-performance-2">Your performance rating is 👉 &nbsp;&nbsp;</p>
                             <p id="computers-victory-2-1">Better luck next time </p>
-                            <p class="computers-victory-3">😥</p>         
+                            <p class="computers-victory-3">😥</p> 
+                            <button id="end">New Game</button>         
                       </div>
 
     
@@ -125,7 +133,7 @@ body{
                                   /* my work on players victory 👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️👮‍♂️*/
 #players-victory{
     text-align: center;
-    margin-top: 7%;
+    /* margin-top: 7%; */
 }
 .dashes{
     font-weight: bolder;
@@ -135,18 +143,33 @@ body{
     font-weight: bolder;
     font-size: 20px;
 }
-.players-victory-2{
+.players-victory-2, #Display-performance, #games, #games-won{
     font-weight: bolder;
     font-size: 20px;
 }
+#RANKING{
+    font-weight: bolder;
+    font-size: 30px; 
+    color: white; 
+}
 .players-victory-3{
     font-weight: bolder;
-    font-size: 900%;
+    font-size: 700%;
+    margin-top: -30;
 }
+#End{
+    margin-top: -5%;
+    margin-left: 30%; 
+    font-weight: bolder;
+    padding: 1vh;
+    color: white;
+    background-color: rgba(0, 0, 255, 0.616)
+}
+
                                     /* my work on computer victory  🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️*/
 #computers-victory{
     text-align: center;
-    margin-top: 7%;
+    margin-top: 5%;
 }
 #computers-victory-1{
     font-weight: bolder;
@@ -158,7 +181,21 @@ body{
 }
 .computers-victory-3{
     font-weight: bolder;
-    font-size: 900%;
+    font-size: 700%;
+    margin-top: -15;
+}
+#Display-performance-2{
+    font-weight: bolder;
+    font-size: 15px;
+}
+#end{
+    margin-top: -5%;
+    margin-left: 30%; 
+    font-weight: bolder;
+    padding: 1vh;
+    color: white;
+    background-color: rgba(0, 0, 255, 0.616)
+    
 }
 </style>
 
@@ -199,42 +236,49 @@ body{
                     //  function second container
                     // here i neastd the second container
                     
-       playersscorecount = 0
+        playersscorecount = 0
        computersscorecount = 0
-             game = 0
-
+        game = 0
+ 
+            const music = new Audio("audio/fire,water,plant.mp3");                                                       // GAME MUSIC
     function playgames(playerchoice) {
-    game++  // calculate the number of times to win a round
+         game++   // calculate the number of times to win a round
+         music.play()
+
+
 
                     //    my work on second container
          playerdisplay = document.getElementById("player-display")
     const computerdisplay = document.getElementById("computer-display")
     const resultdisplay = document.getElementById("result-display")
-     const choice = [`Rock`,`Paper`,`Scissor`]
+     const choice = [`Fire`,`Water`,`Plant`]
 
                    // players and compter score incrememt
      const playercount = document.getElementById("player-count");
      const computercount = document.getElementById("computer-count");
 
            computerchoice = choice[Math.floor(Math.random() * 3)]
-           console.log(computerchoice);
+        //    console.log(computerchoice);
             result = ""
             // count = 0
 
            if (playerchoice === computerchoice) {
                     result = "IT IS A TIE ❌"
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;   // display players choices 
+                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉 ${computerchoice}`;
+                        resultdisplay.textContent = result;
            } else  {
-                 switch (playerchoice) {
-                    case `Rock`:
-                        result= (computerchoice ===`Paper` ) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;
+                 switch(playerchoice) {
+                    case `Fire`:
+                        result = (computerchoice === `Plant`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";
                       
                         break;
-                    case `Paper`:
-                        result= (computerchoice === `Scissor`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
+                    case `Water`:
+                        result= (computerchoice === `Fire`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;
-                    case `Scissor`:
-                        result = (computerchoice ===  `Rock`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
+                    case `Plant`:
+                        result = (computerchoice ===  `Water`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;   
                         
@@ -251,21 +295,56 @@ body{
                  resultdisplay.classList.remove("bluetext","redtext")
                  switch (result) {
                     case "YOU WIN! 👮‍♂️": 
-                    if (playersscorecount < 2) {                     //runs when players score is lesser than 5
+                    if (playersscorecount < 20) {                     //runs when players score is lesser than 5
                         playersscorecount++                          //add players score 
                         playercount.textContent =  playersscorecount //show players score
-                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;   // display players choices 
-                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉  ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;   // display players choices 
+                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉 ${computerchoice}`;
+                        resultdisplay.textContent = result;
+
+
+                    
+
+                                    if (game == 20 ||  game > 20 ) {
+                                        
+ 
+
+                                            if ( playersscorecount / 20 * 100  <= 30) {
+                                                             document.getElementById("second-container").style.display = "none"
+                                                            document.getElementById("computers-victory").style.display = "block"
+
+                                                            document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
+                                                              document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
+                                                            document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
+                                                
+                                            } else {
+                                       
+                                                            
+                                                 if (playersscorecount / 20 * 100  <= 40) {
+                                                          document.getElementById("RANKING").textContent = `No Ranking ❌`
+                                                }else if (playersscorecount / 20 * 100    <= 59) {
+                                                          document.getElementById("RANKING").textContent = `Good ⭐`
+                                                }else if (playersscorecount / 20 * 100    <= 69) {
+                                                         document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
+                                                }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                                         document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
+                                                } 
+
+
+
+                                                document.getElementById("second-container").style.display = "none"
+                                                 document.getElementById("players-victory").style.display = "block"
+                                                 document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
+                                                 document.getElementById("games").textContent = `Total rounds played:  ${game} `
+                                                 document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
+                                                  document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
+                                            } 
+
+                                    }
+
                     
                     }
-
-                    else if (playercount.textContent  == 2) {           //runs when  players score is equal to 5 
-                                                
-                         document.getElementById("second-container").style.display = "none"
-                         document.getElementById("players-victory").style.display = "block"
-                        document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
-                        document.getElementById("number").textContent = `it took you  ${game} rounds to win against the computer`
-                    }
+                 
                     
                     
                     resultdisplay.classList.add("bluetext");
@@ -276,29 +355,54 @@ body{
                     // computercount.textContent =      computersscorecount
                     resultdisplay.classList.add("redtext")
 
-                    if ( computersscorecount < 5) {
+                    if ( computersscorecount < 20) {
                         computersscorecount++ 
                         computercount.textContent =      computersscorecount
-                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;
-                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉  ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;
+                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉 ${computerchoice}`;
+                         resultdisplay.textContent = result;
+
+
+                            if (game == 20  ||  game > 20) { 
+                                        
+
+
+                    
+                                    if (playersscorecount / 20 * 100  <= 30) {
+                                                     document.getElementById("second-container").style.display = "none"
+                                                    document.getElementById("computers-victory").style.display = "block"
+
+                                                    document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
+                                                     document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
+                                                    document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
+                                        
+                                    } else {
+
+                                            
+                                        if (playersscorecount / 20 * 100  <= 40) {
+                                            document.getElementById("RANKING").textContent = `No Ranking ❌`
+                                        }else if (playersscorecount / 20 * 100    <= 59) {
+                                            document.getElementById("RANKING").textContent = `Good ⭐`
+                                        }else if (playersscorecount / 20 * 100    <= 69) {
+                                            document.getElementById("RANKING").textContent = `Very Good ⭐⭐`
+                                        }else   if (playersscorecount / 20 * 100     >= 70 ) {
+                                            document.getElementById("RANKING").textContent = ` Excellent ⭐⭐⭐`
+                                        } 
+                                        document.getElementById("second-container").style.display = "none"
+                                        document.getElementById("players-victory").style.display = "block"
+                                        document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
+                                        document.getElementById("games").textContent = `Total rounds played:  ${game} `
+                                          document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
+                                        document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
+                                    }
+
+
+                            }
+
+                                                 
+
                     }
-
-                    if (computercount.textContent == 5) {
-                        document.getElementById("second-container").style.display = "none"
-                        document.getElementById("computers-victory").style.display = "block"
-
-                        document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                        document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
-                    }
-                  
-                        break;
-                    case "IT IS A TIE ❌": 
-                        if (playerchoice === computerchoice) {
-                            computersscorecount--
-                            playersscorecount--
-                        }
-                            break;
-
+                         
     
                        
     }
@@ -306,6 +410,25 @@ body{
     
 
  }
+
+
+                            //  this code direct users back to the main page to start game
+
+                            document.getElementById("End").onclick = function () {
+                            window.location.href="index.html"
+                            }
+
+
+                            document.getElementById("end").onclick = function () {
+                            window.location.href="index.html"
+                            }
+
+
+
+
+
+
+
 
                         //    code that enable the second container to function well in the first code
                            // attach of event listiner
@@ -329,110 +452,7 @@ body{
 
         
 
-//        playersscorecount = 0
-//        computersscorecount = 0
- 
 
-//     function playgames(playerchoice) {
-    
-
-//                     //    my work on second container
-//          playerdisplay = document.getElementById("player-display")
-//     const computerdisplay = document.getElementById("computer-display")
-//     const resultdisplay = document.getElementById("result-display")
-//      const choice = [`Rock`,`Paper`,`Scissor`]
-
-//                    // players and compter score incrememt
-//      const playercount = document.getElementById("player-count");
-//      const computercount = document.getElementById("computer-count");
-
-//            computerchoice = choice[Math.floor(Math.random() * 3)]
-//            console.log(computerchoice);
-//             result = ""
-//             // count = 0
-
-//            if (playerchoice === computerchoice) {
-//                     result = "IT IS A TIE ❌"
-//            } else  {
-//                  switch (playerchoice) {
-//                     case `Rock`:
-//                         result= (computerchoice ===`Paper` ) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;
-                      
-//                         break;
-//                     case `Paper`:
-//                         result= (computerchoice === `Scissor`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
-                        
-//                         break;
-//                     case `Scissor`:
-//                         result = (computerchoice ===  `Rock`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
-                        
-//                         break;   
-                        
-//            }          
-//     }
- 
-                
-//                 //  playerdisplay.textContent = `PLAYER:      ${playerchoice}`;
-//                 //  computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
-//                  resultdisplay.textContent = result;
-
-                
-
-//                  resultdisplay.classList.remove("bluetext","redtext")
-//                  switch (result) {
-//                     case "YOU WIN! 👮‍♂️": 
-//                     if (playersscorecount < 5) {                     //runs when players score is lesser than 5
-//                         playersscorecount++                          //add players score 
-//                         playercount.textContent =  playersscorecount //show players score
-//                         playerdisplay.textContent = `PLAYER:      ${playerchoice}`;   // display players choices 
-                      
-//                     }
-
-//                     else if (playercount.textContent  == 5) {           //runs when  players score is equal to 5 
-//                         playercount.textContent = "you won Adams"       //changes players count to 
-//                         playercount.textContent.disable = true          // disable futher count 
-//                         playerdisplay.textContent = "congratulation u have won the game" //  players choice displayes 
-//                         playerdisplay.textContent.disable = true   //disablesed choice displayes 
-//                         // window.location.href = "congratonRockPaperScissor.html"
-                     
-                  
-                    
-                       
-               
-//                     }
-                    
-                    
-//                     resultdisplay.classList.add("bluetext");
-
-//                         break;
-//                     case "YOU LOOSE 🏃‍♂️": 
-//                     // computersscorecount++ 
-//                     // computercount.textContent =      computersscorecount
-//                     resultdisplay.classList.add("redtext")
-
-//                     if ( computersscorecount < 5) {
-//                         computersscorecount++ 
-//                         computercount.textContent =      computersscorecount
-//                          computerdisplay.textContent =  `COMPUTER:      ${computerchoice}`;
-//                     }
-
-//                     if (computercount.textContent == 5) {
-//                         computercount.textContent = "computer won"
-//                         computercount.textContent.disable = true            
-//                          computerdisplay.textContent = "computer wins the game "         
-//                          computerdisplay.textContent.disable = true
-                      
-//                     }
-                  
-//                         break;
-
-    
-                       
-//     }
-
-    
-
-//  }
 
 </script>
 

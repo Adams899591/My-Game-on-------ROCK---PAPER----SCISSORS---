@@ -30,7 +30,7 @@
         <h1>Rock, Paper, Scissor</h1>
              <div class="choices">
                 <button class="play"   onclick="playgames(`Rock`)">🛑  </button>
-                <button class="play"   onclick="playgames(`Paper`)"> 📜</button>
+                <button class="play"   onclick="playgames(`Paper`)">📜</button>
                 <button class="play"   onclick="playgames(`Scissor`)">✂</button>
              </div>
                    
@@ -55,7 +55,8 @@
                              <p id="games-won"></p>
                              <p id="Display-performance">Your performance rating is 👉 &nbsp;&nbsp;</p>
                              <p id="RANKING">     </p>
-                             <p class="players-victory-3">🏆</p>         
+                             <p class="players-victory-3">🏆</p>  
+                             <button id="End">Restart Game</button>       
                      
                         </div>
 
@@ -70,7 +71,8 @@
                             <p class="dashes">--------------------------------------</p>
                             <p id="Display-performance-2">Your performance rating is 👉 &nbsp;&nbsp;</p>
                             <p id="computers-victory-2-1">Better luck next time </p>
-                            <p class="computers-victory-3">😥</p>         
+                            <p class="computers-victory-3">😥</p> 
+                            <button id="end">New Game</button>         
                       </div>
 
     
@@ -152,7 +154,15 @@ body{
 .players-victory-3{
     font-weight: bolder;
     font-size: 700%;
-    margin-top: -20;
+    margin-top: -30;
+}
+#End{
+    margin-top: -5%;
+    margin-left: 30%; 
+    font-weight: bolder;
+    padding: 1vh;
+    color: white;
+    background-color: rgba(0, 0, 255, 0.616)
 }
 
                                     /* my work on computer victory  🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️🏃‍♂️*/
@@ -176,6 +186,15 @@ body{
 #Display-performance-2{
     font-weight: bolder;
     font-size: 15px;
+}
+#end{
+    margin-top: -5%;
+    margin-left: 30%; 
+    font-weight: bolder;
+    padding: 1vh;
+    color: white;
+    background-color: rgba(0, 0, 255, 0.616)
+    
 }
 </style>
 
@@ -220,10 +239,10 @@ body{
        computersscorecount = 0
         game = 0
  
-
+            const music = new Audio("audio/rock,paper,scissor.mp3");                                                       // GAME MUSIC
     function playgames(playerchoice) {
          game++   // calculate the number of times to win a round
-
+         music.play()
 
 
 
@@ -238,24 +257,27 @@ body{
      const computercount = document.getElementById("computer-count");
 
            computerchoice = choice[Math.floor(Math.random() * 3)]
-           console.log(computerchoice);
+        //    console.log(computerchoice);
             result = ""
             // count = 0
 
            if (playerchoice === computerchoice) {
                     result = "IT IS A TIE ❌"
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;   // display players choices 
+                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉 ${computerchoice}`;
+                        resultdisplay.textContent = result;
            } else  {
-                 switch (playerchoice) {
+                 switch(playerchoice) {
                     case `Rock`:
-                        result= (computerchoice ===`Paper` ) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;
+                        result = (computerchoice === `Scissor`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";
                       
                         break;
                     case `Paper`:
-                        result= (computerchoice === `Scissor`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
+                        result= (computerchoice === `Rock`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;
                     case `Scissor`:
-                        result = (computerchoice ===  `Rock`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️" ;  
+                        result = (computerchoice ===  `Paper`) ? "YOU WIN! 👮‍♂️" : "YOU LOOSE 🏃‍♂️";  
                         
                         break;   
                         
@@ -275,8 +297,8 @@ body{
                     if (playersscorecount < 20) {                     //runs when players score is lesser than 5
                         playersscorecount++                          //add players score 
                         playercount.textContent =  playersscorecount //show players score
-                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;   // display players choices 
-                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉  ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;   // display players choices 
+                        computerdisplay.textContent =  `Computer  🏃‍♂️:    chose  👉 ${computerchoice}`;
                         resultdisplay.textContent = result;
 
 
@@ -291,7 +313,7 @@ body{
                                                             document.getElementById("computers-victory").style.display = "block"
 
                                                             document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                                                              document.getElementById("Display-performance-2").textContent += `${playersscorecount / 20 * 100}%  which is low and needs improvement`
+                                                              document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
                                                             document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                                                 
                                             } else {
@@ -314,7 +336,7 @@ body{
                                                  document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                                                  document.getElementById("games").textContent = `Total rounds played:  ${game} `
                                                  document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
-                                                  document.getElementById("Display-performance").textContent += `${playersscorecount / 20 * 100}% `  
+                                                  document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
                                             } 
 
                                     }
@@ -335,8 +357,8 @@ body{
                     if ( computersscorecount < 20) {
                         computersscorecount++ 
                         computercount.textContent =      computersscorecount
-                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉  ${playerchoice}`;
-                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉  ${computerchoice}`;
+                        playerdisplay.textContent = ` ${Name.value} 👮‍♂️:  chose  👉 ${playerchoice}`;
+                         computerdisplay.textContent =  `Computer 🏃‍♂️:    chose  👉 ${computerchoice}`;
                          resultdisplay.textContent = result;
 
 
@@ -350,7 +372,7 @@ body{
                                                     document.getElementById("computers-victory").style.display = "block"
 
                                                     document.getElementById("computers-victory-2").textContent = `😞 Oh no,  ${Name.value}! The computer won this round😌`
-                                                     document.getElementById("Display-performance-2").textContent += `${playersscorecount / 20 * 100}%  which is low and needs improvement`
+                                                     document.getElementById("Display-performance-2").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}%  which is low and needs improvement`
                                                     document.getElementById("computers-victory-2-1").textContent += ` ${Name.value}!  💔`
                                         
                                     } else {
@@ -370,7 +392,7 @@ body{
                                         document.getElementById("players-victory-1").textContent += `  ${Name.value} 🎉 `
                                         document.getElementById("games").textContent = `Total rounds played:  ${game} `
                                           document.getElementById("games-won").textContent = `Total games won: ${playersscorecount}`
-                                        document.getElementById("Display-performance").textContent += `${playersscorecount / 20 * 100}% `  
+                                        document.getElementById("Display-performance").textContent += `${(playersscorecount / 20 * 100).toFixed(1)}% `  
                                     }
 
 
@@ -387,6 +409,18 @@ body{
     
 
  }
+
+
+                            //  this code direct users back to the main page to start game
+
+                            document.getElementById("End").onclick = function () {
+                            window.location.href="index.html"
+                            }
+
+
+                            document.getElementById("end").onclick = function () {
+                            window.location.href="index.html"
+                            }
 
                         //    code that enable the second container to function well in the first code
                            // attach of event listiner
