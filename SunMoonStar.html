@@ -6,6 +6,7 @@
     <title>Sun - Moon - Star</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- // 🪨 🔥 💦 ☘️ 🦁 🔫 🌞 🌝 ✨  🌌 🚀-->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
 </head>
 <body>
 
@@ -24,7 +25,7 @@
           <!-- about my self the developer -->
           <br><br><br>
           <div>
-                <p style="font-size: 130%;">Developed by: <b> <span style="color: blue;">Yahaya Usman Adams</span> </b></p>
+                <p style="font-size: 130%;">Developed by: <b> <span id="animation" style="color: blue;">Yahaya Usman Adams</span> </b></p>
                 <p style="font-size: 110%;">For inquiries, feedback, or collaboration, feel free to contact me. </p>
                 <p style="font-size: 110%;"> <a href="tel: +2349018827571 "><i class="fa-solid fa-phone"></i></a>
                                              &nbsp; &nbsp; | &nbsp; &nbsp;
@@ -32,7 +33,15 @@
                                             &nbsp; &nbsp; | &nbsp; &nbsp;
                                             <a href="http://www.facebook.com/Usman Adams" target="_blank">   <i class="fa-brands fa-facebook"></i></a></p>
                 <p style="font-size: 110%;"> Thanks for playing!</p>
-                
+                              <script>
+                                var typed = new Typed("#animation",{
+                                    strings: ["Yahaya Usman Adams", "Usman Yahaya Adams"],
+                                    typeSpeed: 50,
+                                    backSpeed: 30,
+                                    loop : true 
+                                } );
+
+                              </script>
           </div>
           
      </div>
@@ -44,6 +53,7 @@
         <h3 id="computer"> 🏃‍♂️ Computer Score : </h3>          <span style="color: red;" id="computer-count">0</span>
      <div>
         <h1>Sun, Moon, Star</h1>
+          <!-- <h6 id="decrease">0</h6> -->
              <div class="choices">
                 <button class="play"   onclick="playgames(`Sun`)"> 🌞</button>
                 <button class="play"   onclick="playgames(`Moon`)"> 🌝 </button>
