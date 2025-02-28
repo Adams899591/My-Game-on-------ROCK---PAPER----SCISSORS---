@@ -4,50 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help on How to Play </title>
+     <!-- CSS link on AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- typed.ja link -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
 </head>
 <body>
-                   <h1 class="How-to-Play">How to Play</h1> <br><br><br><br><br>
+                  <!-- my work on how to play -->
+                   <h1 id="How-to-Play" >      </h1> <br><br><br><br><br>
+                                <script>
+                                var typed = new Typed("#How-to-Play",{
+                                    strings: ["Quick Guide", "How to Play","Instructions","Quick Guide", "Game Rules"],
+                                    typeSpeed: 70,
+                                    backSpeed: 60,
+                                    loop : true 
+                                    // showCursor :true
+                                } );
 
+                                </script>
+               
     <div class="Container">
          <!-- <h1 id="How-to-Play">How to Play</h1> -->
              <div class="All-paragraph">
-                    <p>1. You will face of the computer in a classic <b>ROCK-PAPER-SCISSORS</b> battle.</p>
-                    <p>2.  if you prefer something different, you can choose a unic mode like <b>Fire-Water-Plant, Lion-Hunter-Gun</b> and more!</p>
-                    <p>3.  The Computer will randomely pick one, and you must choose your moves wisely.</p>
-                    <p>4. Choose <b>Rock, Paper, or scissor</b> to play against the computer.</p>
-                    <p>5. You will play <b>50 rounds</b> of rock, paper, scissors <br> the game will instantly tell you if you <b>Win, Lose, or Tie </b></p>
+                    <p data-aos="flip-up">1. You will face of the computer in a classic <b>ROCK-PAPER-SCISSORS</b> battle.</p>
+                    <p data-aos="flip-down">2.  if you prefer something different, you can choose a unic mode like <b>Fire-Water-Plant, Lion-Hunter-Gun</b> and more!</p>
+                    <p data-aos="slide-left" >3.  The Computer will randomely pick one, and you must choose your moves wisely.</p>
+                    <p data-aos="zoom-in-down">4. Choose <b>Rock, Paper, or scissor</b> to play against the computer.</p>
+                    <p data-aos="slide-down">5. You will play <b>50 rounds</b> of rock, paper, scissors <br> the game will instantly tell you if you <b>Win, Lose, or Tie </b></p>
                                          <!-- below 5  -->
-                               <span><b>➡ Winning:</b> You gain <b>1 point</b></span> <br>
-                               <span><b>➡ Losing:</b> The computer gain <b>1 point</b></span> <br>
-                               <span><b>➡ Tie:</b> <b>No pointt</b> are awarded to either players</span>
+                       <div data-aos="zoom-out-right">
+                        <span ><b>➡ Winning:</b> You gain <b>1 point</b></span>
+                        <span><b>➡ Losing:</b> The computer gain <b>1 point</b></span> <br>
+                        <span><b>➡ Tie:</b> <b>No pointt</b> are awarded to either players</span>
+                       </div>
 
-            <h2>Scoring and Ranking system</h2>
-                     <p>6. After <b>50 rounds</b> your total will determine your <b>performance ranking</b></p>
-                                <span><b>➡ Excellent</b> 70 and above wins ⭐⭐⭐</span> <br>
-                                <span><b>➡ Very Good</b> 60 - 69 wins  ⭐⭐</span> <br>
-                                <span><b>➡ Good</b> 45 - 59 wins ⭐</span> <br>
-                                <span><b>➡ Low Ranking</b> 31 - 40  ❌</span> <br>
-                                <span><b>➡ Fail</b> Below 30 😥</span> 
+            <h2 data-aos="slide-left">Scoring and Ranking system</h2>
+                     <p data-aos="zoom-in-up">6. After <b>50 rounds</b> your total will determine your <b>performance ranking</b></p>
 
+                             <div  data-aos="fade-left">
+                            <span ><b>➡ Excellent</b> 70 and above wins ⭐⭐⭐</span> <br>
+                            </div>
+                            <div data-aos="zoom-in-right">
+                            <span><b>➡ Very Good</b> 60 - 69 wins  ⭐⭐</span> <br>
+                            </div>
+
+                            <div data-aos="zoom-in-down">
+                            <span><b>➡ Good</b> 45 - 59 wins ⭐</span> <br>
+                            </div>
+
+                            <div data-aos="flip-left">
+                            <span><b>➡ Low Ranking</b> 31 - 40  ❌</span> <br>
+                            </div>
+
+                            <div data-aos="fade-right">
+                            <span ><b>➡ Fail</b> Below 30 😥</span> 
+                           </div>
+                        
                                
-                    <p>7. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
+                    <p  data-aos="fade-left-up">7. Can you outsmart the computer and become the ultimate  champion <b>?</b></p>
              </div>
-            <h2> 😁  Game Mode</h2>
+            <h2 data-aos="flip-right"> 😁  Game Mode</h2>
 
-             <div class="All-paragraph">
-                <label for="RockPaperScissor">  <input type="radio" name=" GameMode" id="RockPaperScissor">💎  Classic  - <b>Rock, Paper, Scissor</b></label>   <br><br>
-                <label for="FireWaterPlant">    <input type="radio" name=" GameMode" id="FireWaterPlant">🌌   Element  -  <b>Fire, Water, Plant </b></label>      <br><br>
-                <label for="LionHunterGun">     <input type="radio" name=" GameMode" id="LionHunterGun">🦁  Survival -  <b>Lion, Hunter, Gun</b></label>         <br><br>
-                <label for="SunMoonStar">       <input type="radio" name=" GameMode" id="SunMoonStar">🚀 Space    <b>Sun, Moon, Star</b></label>                 <br><br>
+             <div  class="All-paragraph">
+                    <div data-aos="slide-left">
+                    <label  for="RockPaperScissor">  <input type="radio" name=" GameMode" id="RockPaperScissor">💎  Classic  - <b>Rock, Paper, Scissor</b></label>   <br><br>
+                    </div>
 
-                <br>
-                <h3 id="Display-name"></h3>
-                <p><b>Choose wisely and let the battle begin!</b>       <button class="button-1" id="Continue">Continue</button></p>
+                    <div data-aos="flip-left">
+                    <label for="FireWaterPlant">    <input type="radio" name=" GameMode" id="FireWaterPlant">🌌   Element  -  <b>Fire, Water, Plant </b></label>      <br><br>
+                    </div>
+
+                    <div data-aos="zoom-out-left">
+                    <label for="LionHunterGun">     <input type="radio" name=" GameMode" id="LionHunterGun">🦁  Survival -  <b>Lion, Hunter, Gun</b></label>         <br><br>
+                    </div>
+
+                    <div data-aos="slide-right">
+                    <label for="SunMoonStar">       <input type="radio" name=" GameMode" id="SunMoonStar">🚀 Space    <b>Sun, Moon, Star</b></label>                 <br><br>
+                    </div>
+
+                 <br>
+                     <h3 id="Display-name"></h3>
+                    <p data-aos="zoom-in-up" ><b>Choose wisely and let the battle begin!</b>       <button class="button-1" id="Continue">Continue</button></p>
           
 
              </div>
     </div>
+                                   <!-- my settinges on AOS -->
 
+
+                                   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>  
+                        <script>
+                            AOS.init();
+                        </script>
+                        
 
 </body>
 </html>
@@ -56,21 +105,40 @@
 
 
 <style>
-.How-to-Play{
-     color: blue;
-     width: 100%;
-     background-color: red;
+       /* <!-- my work css on how to play --> */
+#How-to-Play{
+     width: 99%;
+     height: 8%;
+     background-color: hsla(120, 100%, 25%, 0.685);
      display: flex;
      justify-content: center;
+     align-items: flex-end;
      position: fixed;
      top: 0%; 
+     border-bottom-style: solid;
+     border-color: red;
+     border-bottom-left-radius: 20px;
+     border-bottom-right-radius: 20px;
+     overflow: hidden;
 }
+
+/* @media(max-width: 600px){
+    body{
+        .Container{
+            width: 200%;
+            background-color: orangered;
+        }
+     
+
+    } */
+
+/* } */
 
 
 
 .Container{
     text-align: center;
-    
+     overflow-y: auto; 
 }
 .All-paragraph{
     font-family: 'Times New Roman', Times, serif;
@@ -142,11 +210,8 @@ Continue.onclick = function () {
     }
 
     
-    
-
-    
 }
-
+                            // media quary
 
 
 
